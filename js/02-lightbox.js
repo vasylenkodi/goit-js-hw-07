@@ -4,6 +4,11 @@ import { galleryItems } from './gallery-items.js';
 
 const galleryElement = document.querySelector(".gallery");  // создает переменную с галереей 
 
+
+// ------------------------СОЗДАНИЕ И РЕНДЕР РАЗМЕТКИ------------------------
+
+
+
 const galleryPreviewImagesToCreate = galleryItems.map((galleryItem) => {  // создает превьюшки в галерее
   const galleryItemElement = document.createElement("li");  // создает теги ли, линк и картинку
   const galleryLinkElement = document.createElement("a");
@@ -22,14 +27,20 @@ const galleryPreviewImagesToCreate = galleryItems.map((galleryItem) => {  // с�
 
 galleryElement.prepend(...galleryPreviewImagesToCreate);  // добавляет все элементы в разметку
 
+
+
+// ---------------------СОЗДАНИЕ ЛАЙТБОКСА--------------------------
+
+
+
 const lightbox = new SimpleLightbox('.gallery .gallery__item', {  // добавляет лайтбокс на галерею
     captionsData: 'alt',
     captionDelay: 250,
 });
 
-galleryElement.addEventListener('click', (event) => {  // предотвращает перенаправление по ссылке
-    event.preventDefault();
-})
+
+// ----------------------ФУНКЦИИ------------------------
+
 
 function addAttributesToPreviewImages(newImageTag, galleryItem) {
   // добавляет аттрибуты для первьюшек

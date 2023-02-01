@@ -3,6 +3,11 @@ import { galleryItems } from "./gallery-items.js";
 
 const galleryElement = document.querySelector(".gallery");  // создает переменную с галереей 
 
+
+
+// ------------------------СОЗДАНИЕ И РЕНДЕР РАЗМЕТКИ------------------------
+
+
 const galleryPreviewImagesToCreate = galleryItems.map((galleryItem) => {  // создает превьюшки в галерее
   const galleryItemElement = document.createElement("div");  // создает теги див, линк и картинку
   const galleryLinkElement = document.createElement("a");
@@ -23,6 +28,11 @@ const galleryPreviewImagesToCreate = galleryItems.map((galleryItem) => {  // с�
 
 galleryElement.prepend(...galleryPreviewImagesToCreate);  // добавляет все элементы в разметку
 
+
+// -----------------------ФУНКЦИИ КОТОРЫЕ БУДУТ СРАБАТЫВТЬ ПРИ ЗАКРЫТИИ И ОТКРЫТИИ ЛАЙТБОКСА----------------
+
+
+
 const onModalOpen = () => {  // функция добавляет слушателя нажатия клавиш на виндов
   window.addEventListener("keydown", onEscKeyPress);
 };
@@ -30,6 +40,10 @@ const onModalOpen = () => {  // функция добавляет слушате
 const onModalClose = () => {  // снимает слушателя
   window.removeEventListener("keydown", onEscKeyPress);
 };
+
+
+// ---------------------ЛАЙТБОКС И ИВЕНТ ДЛЯ ЗАКРЫТИЯ ЧЕРЕЗ ESC--------------------------
+
 
 const modalElement = basicLightbox.create("<img>", {  // создает модалку с картинкой
   onShow: onModalOpen,     // при открытии модалки будет вешаться слушатель нажатия клавиши на окно
@@ -45,6 +59,10 @@ galleryElement.addEventListener("click", (event) => {  // добавляет с�
   modalElement.show();  // открывает модалку
   createOriginalImage(event.target);  // добавляет в модалку картинку на которую нажали
 });
+
+
+// ----------------------ФУНКЦИИ------------------------
+
 
 function onEscKeyPress(event) {  // функция которая закрывает модалку сли была нажата клавиша esc
   if (event.code === "Escape") {
