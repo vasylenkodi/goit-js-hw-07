@@ -27,7 +27,7 @@ const onModalOpen = () => {  // функция добавляет слушате
   window.addEventListener("keydown", onEscKeyPress);
 };
 
-const onModalClose = (modalElement) => {  // снимает слушателя
+const onModalClose = () => {  // снимает слушателя
   window.removeEventListener("keydown", onEscKeyPress);
 };
 
