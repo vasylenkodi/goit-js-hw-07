@@ -1,4 +1,4 @@
-// import SimpleLightbox from '../node_modules/simplelightbox/dist/simple-lightbox.esm.js';
+// import SimpleLightbox from 'https://cdnjs.cloudflare.com/ajax/libs/simplelightbox/2.12.1/simple-lightbox.esm.min.js';
 import { galleryItems } from './gallery-items.js';
 // Change code below this line
 
